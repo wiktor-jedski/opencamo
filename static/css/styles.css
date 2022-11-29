@@ -1,0 +1,10 @@
+/* site-wide applicable css */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+
+.bg-navigation {
+  background-color: #000080
+}
