@@ -50,3 +50,7 @@ class CreateLocation(LoginRequiredMixin, generic.CreateView):
             messages.success(request, "Location successfully added.")
         response = super().post(request, *args, **kwargs)
         return response
+
+
+class ListLocation(LoginRequiredMixin, generic.ListView):
+    model = Location
