@@ -17,5 +17,5 @@ class Airport(Location):
 
 
 class Unit(models.Model):
-    name = models.CharField(max_length=100)
-    unit = models.CharField(max_length=10)
+    name = models.CharField(max_length=100, unique=True)
+    unit = models.CharField(max_length=10, unique=True)
