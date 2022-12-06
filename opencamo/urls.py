@@ -23,5 +23,6 @@ urlpatterns = [
     path('', opencamo.views.IndexPage.as_view(), name='index'),
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('system_settings/', include('system_settings.urls', namespace='system_settings'))
+    path('system_settings/', include('system_settings.urls', namespace='system_settings')),
+    path('engineering/', include('engineering.urls', namespace='engineering'))
 ]
