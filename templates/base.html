@@ -27,8 +27,17 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         {% if user.is_authenticated %}
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Engineering</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Engineering</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="{% url 'engineering:ac_model_add' %}">Add AC Model</a></li>
+              <li><a class="dropdown-item" href="{% url 'engineering:ac_add' %}">Add AC</a></li>
+              <li><a class="dropdown-item" href="{% url 'engineering:effectivity_add' %}">Add Effectivity</a></li>
+              <li><a class="dropdown-item" href="{% url 'engineering:control_add' %}">Add Control</a></li>
+              <li><a class="dropdown-item" href="{% url 'engineering:rotable_pn_add' %}">Add Rotable PN</a></li>
+              <li><a class="dropdown-item" href="{% url 'engineering:repairable_pn_add' %}">Add Repairable PN</a></li>
+              <li><a class="dropdown-item" href="{% url 'engineering:expendable_pn_add' %}">Add Expendable PN</a></li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Planning</a>
@@ -72,13 +81,6 @@
   </nav>
 </header>
 
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
 
 <main class="flex-shrink-0">
     <div class="container mt-2">
